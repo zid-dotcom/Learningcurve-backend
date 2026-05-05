@@ -6,6 +6,14 @@ const DataSchema= new mongoose.Schema({
         type:String,
         required:true
     },
+    studentName:{
+        type:String,
+        required:true
+    },
+    studentClass:{
+        type:String,
+        required:true
+    },
     mobile:{
         type:String,
         required:Number

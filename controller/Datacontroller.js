@@ -7,9 +7,9 @@ const validator=require('validator')
 /* Api for add data */
 exports.AddData=async(req,res)=>{
     try{
-        const {name,mobile,email,location,description}=req.body
+        const {name,studentName,studentClass,mobile,email,location,description}=req.body
 
-        if(!name||!mobile||!email){
+        if(!name||!studentName||!studentClass||!mobile||!email){
             return res.status(400).json('please fill all fields')
         }
 
@@ -17,7 +17,7 @@ exports.AddData=async(req,res)=>{
             return res.status(401).json('please enter valid email address')
         }
 
-        const newData= new DataModel({name,mobile,email,location,description})
+        const newData= new DataModel({name,studentName,studentClass,mobile,email,location,description})
         await newData.save()
         res.status(200).json(newData)
 
